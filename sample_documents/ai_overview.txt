@@ -1,0 +1,13 @@
+Artificial Intelligence (AI)
+
+Artificial Intelligence is a branch of computer science focused on creating systems capable of performing tasks that normally require human intelligence.
+
+Machine Learning allows computers to learn patterns from data without being explicitly programmed.
+
+Deep Learning is a subset of Machine Learning that uses neural networks with multiple layers.
+
+Large Language Models (LLMs) are trained on massive collections of text and can answer questions, summarize information, and generate human-like responses.
+
+Retrieval-Augmented Generation (RAG) improves LLM responses by retrieving relevant information from external documents before generating an answer.
+
+Agentic RAG extends traditional RAG by allowing an AI agent to determine whether retrieval is necessary, evaluate retrieved context, rewrite queries when needed, and produce more reliable responses.
