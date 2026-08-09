@@ -17,6 +17,9 @@ st.caption("An AI-powered document question answering system using Agentic RAG."
 if "vectorstore" not in st.session_state:
     st.session_state.vectorstore = None
 
+if "document_text" not in st.session_state:
+    st.session_state.document_text = None
+
 if "query_input" not in st.session_state:
     st.session_state.query_input = ""
 
@@ -36,6 +39,7 @@ if uploaded_file:
     try:
         text = process_file(uploaded_file)
 
+        st.session_state.document_text = text
         st.session_state.vectorstore = create_vectorstore(text)
 
         st.success("✅ Document processed and indexed successfully!")
@@ -60,6 +64,8 @@ if query:
         answer, steps, context, confidence = run_agent(
             query,
             st.session_state.vectorstore,
+            st.session_state.document_text,
+
         )
 
     st.subheader("🧠 Agent Reasoning")
@@ -69,8 +75,8 @@ if query:
 
     if confidence is not None:
         st.metric(
-            "Retrieval Confidence",
-            confidence,
+            "Retrieval Similarity",
+            f"{confidence:.2f}",
         )
 
     if context:

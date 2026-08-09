@@ -6,44 +6,73 @@ from src.config import (
 from src.vectorstore import retrieve_context
 
 
-def evaluate_retrieval(query, document_uploaded=True, context=None):
+def evaluate_retrieval(query, document_text=None, context=None):
 
     prompt = f"""
-You are an AI agent.
+You are an AI agent responsible for deciding how to answer a user question.
 
-Task:
-1. Decide if retrieval is needed (RETRIEVE or DIRECT)
-2. If context is provided, evaluate it (GOOD or BAD)
+Your task has two possible stages:
 
-Rules:
+1. Decide whether the question should use the uploaded document:
+   - RETRIEVE
+   - DIRECT
 
-Document uploaded:
-{"Yes" if document_uploaded else "No"}
+2. If retrieved context is provided, evaluate whether it contains
+   enough information to answer the question:
+   - GOOD
+   - BAD
 
-- If a document has been uploaded and the question could reasonably
-  be answered from that document, choose RETRIEVE.
-
-- Use DIRECT only if the question is clearly unrelated to the uploaded document.
-
-Examples:
-
-Uploaded policy document:
-"What are working hours?" -> RETRIEVE
-
-Uploaded employee handbook:
-"When should I submit leave?" -> RETRIEVE
-
-"What is the capital of Japan?" -> DIRECT
+Uploaded document:
+{document_text if document_text else "No document uploaded."}
 
 Question:
 {query}
 
-Context:
+Retrieved context:
 {context if context else "None"}
 
-Output format:
+Routing rules:
+
+- Choose RETRIEVE if the uploaded document contains information that
+  could reasonably answer the question.
+
+- Choose DIRECT if the question is clearly unrelated to the uploaded
+  document and can be answered without information from it.
+
+- Do not choose RETRIEVE merely because a document exists.
+
+Context evaluation rules:
+
+- GOOD = the retrieved context contains enough information to answer
+  the question.
+
+- BAD = the context is related to the topic but does not contain
+  enough information to answer the question.
+
+- Do not mark context as GOOD merely because it discusses a similar topic.
+
+Examples:
+
+Document:
+"Employees must submit annual leave requests at least five working
+days in advance."
+
+Question:
+"When should I submit annual leave?"
+Decision: RETRIEVE
+
+Question:
+"What is the capital of Japan?"
+Decision: DIRECT
+
+Question:
+"What should I do if IT support is unavailable outside business hours?"
+Decision: RETRIEVE
+
+Output exactly:
+
 Decision: RETRIEVE or DIRECT
-Evaluation: GOOD or BAD (if context exists, else NONE)
+Evaluation: GOOD or BAD or NONE
 """
 
     response  = client.chat.completions.create(
@@ -126,14 +155,14 @@ Question:
     return response.choices[0].message.content.strip()
 
 
-def run_agent(query, vectorstore):
+def run_agent(query, vectorstore, document_text=None):
 
     steps_log = []
 
     if vectorstore:
         decision, _ = evaluate_retrieval(
             query,
-            document_uploaded=True,
+            document_text=document_text,
         )
     else:
         decision = "DIRECT"
@@ -153,14 +182,12 @@ def run_agent(query, vectorstore):
 
     _, evaluation = evaluate_retrieval(
         query,
-        document_uploaded=True,
+        document_text=document_text,
         context=context,
     )
 
-    steps_log.append(f"Evaluation: {evaluation}")
-
     steps_log.append(
-        f"Confidence Score: {confidence}"
+        f"Evaluation: {evaluation}"
     )
 
     if evaluation == "BAD":
@@ -182,12 +209,12 @@ def run_agent(query, vectorstore):
 
         _, evaluation = evaluate_retrieval(
             query,
-            document_uploaded=True,
+            document_text=document_text,
             context=context,
         )
 
         steps_log.append(
-            f"Updated Confidence: {confidence}"
+            f"Updated Retrieval Similarity: {confidence:.2f}"
         )
 
         steps_log.append(
