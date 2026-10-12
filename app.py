@@ -61,7 +61,7 @@ if query:
 
     with st.spinner("Agent is thinking..."):
 
-        answer, steps, context, confidence = run_agent(
+        answer, steps, context, confidence, evaluation_status = run_agent(
             query,
             st.session_state.vectorstore,
             st.session_state.document_text,
@@ -75,9 +75,9 @@ if query:
 
     if confidence is not None:
         st.metric(
-            "Retrieval Similarity",
-            f"{confidence:.2f}",
-        )
+        "Nearest Chunk Distance (lower is closer)",
+        f"{confidence:.4f}",
+    )
 
     if context:
         st.subheader("Retrieved Context")

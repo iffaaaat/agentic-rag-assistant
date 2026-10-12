@@ -1,4 +1,3 @@
-import math
 
 from langchain_community.vectorstores import FAISS
 from langchain_openai import OpenAIEmbeddings
@@ -11,8 +10,8 @@ from src.config import (
     TOP_K,
 )
 
-def create_vectorstore(text):
 
+def create_vectorstore(text):
     splitter = CharacterTextSplitter(
         chunk_size=CHUNK_SIZE,
         chunk_overlap=CHUNK_OVERLAP,
@@ -28,28 +27,25 @@ def create_vectorstore(text):
 
 
 def retrieve_context(vectorstore, query, k=TOP_K):
-
-    docs_and_scores = vectorstore.similarity_search_with_score(query, k=k)
+    docs_and_scores = vectorstore.similarity_search_with_score(
+        query,
+        k=k
+    )
 
     if not docs_and_scores:
-        return None, 0
+        return None, None
 
     context = "\n\n".join(
-        [f"[Source {i+1}]: {doc.page_content}" for i, (doc, _) in enumerate(docs_and_scores)]
+        f"[Source {i + 1}]: {doc.page_content}"
+        for i, (doc, _) in enumerate(docs_and_scores)
     )
 
-    scores = [score for _, score in docs_and_scores]
-
-    best = min(scores)
-    worst = max(scores)
-
-    similarity = math.exp(-best)
-
-    score_gap = worst - best
-
-    confidence = round(
-        similarity * (1 + score_gap),
-        2,
+    # FAISS returns a distance, not a confidence probability.
+    # With this index configuration, smaller distances indicate
+    # closer matches.
+    best_distance = min(
+        float(score)
+        for _, score in docs_and_scores
     )
 
-    return context, confidence
+    return context, best_distance
