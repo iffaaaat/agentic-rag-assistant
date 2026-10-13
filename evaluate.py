@@ -1,4 +1,3 @@
-
 import argparse
 import csv
 import json
@@ -79,6 +78,36 @@ def run_evaluation(document_path, test_path):
             if passed:
                 correct += 1
 
+            # Extract validation outcomes from the agent's steps.
+            citation_status = "NOT_RUN"
+            final_answer_status = "NOT_RUN"
+
+            for step in steps:
+                if step == "Citation Validation: PASSED":
+                    citation_status = "PASSED"
+
+                elif step == "Citation Validation: FAILED":
+                    citation_status = "FAILED"
+
+                elif step == "Citation Retry: PASSED":
+                    citation_status = "PASSED_AFTER_RETRY"
+
+                elif step == "Citation Retry: FAILED":
+                    citation_status = "FAILED_AFTER_RETRY"
+
+                elif step == "Final Answer Verification: PASSED":
+                    final_answer_status = "PASSED"
+
+                elif step == "Final Answer Verification: FAILED":
+                    final_answer_status = "FAILED"
+
+            # Track abstentions caused by answer-validation failures.
+            answer_abstained = (
+                "I couldn't produce an answer with valid source "
+                "citations" in answer
+                or "I couldn't verify the final answer" in answer
+            )
+
             result = {
                 "id": case["id"],
                 "question": question,
@@ -91,14 +120,19 @@ def run_evaluation(document_path, test_path):
                 "steps": steps,
                 "context": context,
                 "error": "",
+                "citation_status": citation_status,
+                "final_answer_status": final_answer_status,
+                "answer_abstained": answer_abstained,
             }
 
             print(f"  Expected: {expected}")
             print(f"  Predicted: {predicted}")
             print(f"  Result: {'PASS' if passed else 'FAIL'}")
+            print(f"  Citation: {citation_status}")
+            print(f"  Final Answer: {final_answer_status}")
+            print(f"  Validation Abstained: {answer_abstained}")
 
         except Exception as error:
-            # Errors count as failed evaluation cases.
             result = {
                 "id": case["id"],
                 "question": question,
@@ -120,13 +154,54 @@ def run_evaluation(document_path, test_path):
 
     total = len(test_cases)
     accuracy = correct / total * 100
+    
+    citation_counts = {
+        "PASSED": 0,
+        "FAILED": 0,
+        "PASSED_AFTER_RETRY": 0,
+        "FAILED_AFTER_RETRY": 0,
+        "NOT_RUN": 0,
+    }
 
+    final_answer_counts = {
+        "PASSED": 0,
+        "FAILED": 0,
+        "NOT_RUN": 0,
+    }
+
+    validation_abstentions = 0
+
+    for result in results:
+        citation_status = result.get("citation_status", "NOT_RUN")
+        final_status = result.get("final_answer_status", "NOT_RUN")
+
+        citation_counts[citation_status] += 1
+        final_answer_counts[final_status] += 1
+
+        if result.get("answer_abstained", False):
+            validation_abstentions += 1
+
+
+    
     print("\n========== EVALUATION REPORT ==========")
-    print(f"Total Questions : {total}")
-    print(f"Correct         : {correct}")
-    print(f"Incorrect       : {total - correct}")
-    print(f"Status Accuracy : {accuracy:.2f}%")
+    print(f"Total Questions       : {total}")
+    print(f"Correct Classifications: {correct}")
+    print(f"Incorrect             : {total - correct}")
+    print(f"Status Accuracy       : {accuracy:.2f}%")
+
+    print("\n--- Citation Validation ---")
+    for status, count in citation_counts.items():
+        print(f"{status:20}: {count}")
+
+    print("\n--- Final Answer Verification ---")
+    for status, count in final_answer_counts.items():
+        print(f"{status:20}: {count}")
+
+    print("\n--- Answer Reliability ---")
+    print(f"Validation Abstentions: {validation_abstentions}")
+
     print("=======================================\n")
+
 
     output_dir = Path("evaluation_results")
     output_dir.mkdir(exist_ok=True)
@@ -147,6 +222,9 @@ def run_evaluation(document_path, test_path):
         "actual_answer",
         "distance",
         "error",
+        "citation_status",
+        "final_answer_status",
+        "answer_abstained",
     ]
 
     with open(

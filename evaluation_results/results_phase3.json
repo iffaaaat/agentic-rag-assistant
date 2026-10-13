@@ -1,0 +1,372 @@
+[
+  {
+    "id": 1,
+    "question": "How many days of annual leave do full-time employees receive?",
+    "expected_status": "ANSWERABLE",
+    "predicted_status": "ANSWERABLE",
+    "passed": true,
+    "expected_answer": "16 days",
+    "actual_answer": "Full-time employees receive 16 days of annual leave per calendar year [Source 1].",
+    "distance": 0.6189112663269043,
+    "steps": [
+      "Decision: RETRIEVE",
+      "Evaluation: ANSWERABLE",
+      "Reason: The retrieved context explicitly states the number of annual leave days for full-time employees. Claim verified: The evidence explicitly states that full-time employees receive 16 days of annual leave per calendar year, which directly supports the candidate answer."
+    ],
+    "context": "[Source 1]: 2. Leave and probation\n\nFull-time employees receive 16 days of annual leave per calendar year. Employees apply for annual leave at least five working days before the proposed start date.\n\nThe probation period for a new full-time employee is three months. A manager may extend probation once for an additional two months after a documented review.\n\n[Source 2]: Sick leave must be reported to the direct manager before 10:00 a.m. on the day of absence. The handbook does not specify a paid sick-leave day allowance; employees should consult their employment contract.\n\n3. Equipment and IT support\n\nNew software engineers receive a company laptop, a USB-C docking station, and one 27-inch monitor. Noise-cancelling headphones are available by request, subject to stock.\n\n[Source 3]: The standard workday is Monday to Friday, 9:00 a.m. to 6:00 p.m., including a one-hour lunch break. Customer support staff work rotating shifts; the shift roster is issued every Thursday.\n\nEmployees may work from home on Tuesdays and Thursdays with manager approval. New employees are expected to attend the Cyberjaya office for their first ten working days.\n\n2. Leave and probation\n\n[Source 4]: Employees can claim approved exam fees within the RM1,200 annual budget. The company does not guarantee reimbursement for failed exam attempts.\n\nLunch expenses are not covered by the training budget. Domestic travel expenses follow a separate travel policy, which is not included in this handbook.\n\n6. Customer support service levels\n\nThe standard customer support response target is four business hours for normal-priority tickets and 30 minutes for critical-priority tickets.",
+    "error": ""
+  },
+  {
+    "id": 2,
+    "question": "Where is Northstar Labs headquartered?",
+    "expected_status": "ANSWERABLE",
+    "predicted_status": "ANSWERABLE",
+    "passed": true,
+    "expected_answer": "Cyberjaya, Selangor",
+    "actual_answer": "Northstar Labs is headquartered in Cyberjaya, Selangor, Malaysia [Source 1].",
+    "distance": 0.7315137982368469,
+    "steps": [
+      "Decision: RETRIEVE",
+      "Evaluation: ANSWERABLE",
+      "Reason: The retrieved context explicitly states the location of Northstar Labs headquarters. Claim verified: The evidence explicitly states that Northstar Labs headquarters is in Cyberjaya, Selangor, which directly supports the candidate answer."
+    ],
+    "context": "[Source 1]: Northstar Labs | Employee Handbook\n\nFictional test document • Revision 3 • Effective 1 September 2026\n\nThis handbook describes internal practices at Northstar Labs, a fictional Malaysian software company. It was created solely for testing retrieval-augmented generation (RAG) systems.\n\n1. Office locations and hours\n\nNorthstar Labs headquarters is in Cyberjaya, Selangor. Its smaller customer support office is in Shah Alam, Selangor.\n\n[Source 2]: For a lost laptop, employees must inform the IT security team immediately by emailing security@northstarlabs.example and submit an incident report within 24 hours.\n\nNormal IT helpdesk requests go to helpdesk@northstarlabs.example. The helpdesk target for routine requests is two business days; urgent security incidents are not subject to that routine target.\n\n4. Engineering and deployment\n\n[Source 3]: Do not infer answers to those subjects from the company location, training allowance, or other unrelated statements.\n\nEnd of fictional handbook\n\n[Source 4]: Normal-priority tickets are handled during support business hours. The four-hour response target is not a promise of resolution within four hours.\n\nCustomer support agents should escalate unresolved critical incidents to the on-call engineering lead after 60 minutes.\n\n7. Information not provided\n\nThis handbook does not state the CEO’s name, individual employee salaries, the company’s revenue, paid sick-leave entitlements, or the details of the travel policy.",
+    "error": ""
+  },
+  {
+    "id": 3,
+    "question": "How many reviewers are required for payment-processing changes?",
+    "expected_status": "ANSWERABLE",
+    "predicted_status": "ANSWERABLE",
+    "passed": true,
+    "expected_answer": "Two reviewers",
+    "actual_answer": "Changes to payment-processing services require two reviewers [Source 1].",
+    "distance": 0.7617897987365723,
+    "steps": [
+      "Decision: RETRIEVE",
+      "Evaluation: ANSWERABLE",
+      "Reason: The retrieved context explicitly states that changes to payment-processing services require two reviewers. Claim verified: The evidence states that changes to payment-processing services require two reviewers, which directly supports the candidate answer."
+    ],
+    "context": "[Source 1]: Every production pull request requires one peer reviewer and passing automated tests. Changes to payment-processing services require two reviewers.\n\nVersion 3 of the internal API is scheduled for release on 18 November 2026. This date is a plan, not a guarantee.\n\n5. Training and reimbursement\n\nEach permanent employee has a training reimbursement budget of RM1,200 per calendar year, subject to manager approval and submission of receipts.\n\n[Source 2]: Normal-priority tickets are handled during support business hours. The four-hour response target is not a promise of resolution within four hours.\n\nCustomer support agents should escalate unresolved critical incidents to the on-call engineering lead after 60 minutes.\n\n7. Information not provided\n\nThis handbook does not state the CEO’s name, individual employee salaries, the company’s revenue, paid sick-leave entitlements, or the details of the travel policy.\n\n[Source 3]: Employees can claim approved exam fees within the RM1,200 annual budget. The company does not guarantee reimbursement for failed exam attempts.\n\nLunch expenses are not covered by the training budget. Domestic travel expenses follow a separate travel policy, which is not included in this handbook.\n\n6. Customer support service levels\n\nThe standard customer support response target is four business hours for normal-priority tickets and 30 minutes for critical-priority tickets.\n\n[Source 4]: 4. Engineering and deployment\n\nThe engineering team uses Python for backend services, PostgreSQL for relational data, and GitHub Actions for continuous integration.\n\nProduction deployments normally occur on Wednesdays between 2:00 p.m. and 4:00 p.m. Malaysia time. Emergency security fixes may be deployed outside this window with approval from the engineering lead.",
+    "error": ""
+  },
+  {
+    "id": 4,
+    "question": "How many days of paid sick leave does Northstar Labs provide per year?",
+    "expected_status": "NOT_SPECIFIED",
+    "predicted_status": "NOT_SPECIFIED",
+    "passed": true,
+    "expected_answer": "The handbook does not specify the allowance.",
+    "actual_answer": "The document does not specify the number of paid sick leave days provided per year at Northstar Labs. It states that employees should consult their employment contract for this information, indicating that it is not detailed in the handbook itself [Source 1].",
+    "distance": 0.9620371460914612,
+    "steps": [
+      "Decision: RETRIEVE",
+      "Evaluation: NOT_SPECIFIED",
+      "Reason: The handbook does not specify a paid sick-leave day allowance; employees should consult their employment contract."
+    ],
+    "context": "[Source 1]: Sick leave must be reported to the direct manager before 10:00 a.m. on the day of absence. The handbook does not specify a paid sick-leave day allowance; employees should consult their employment contract.\n\n3. Equipment and IT support\n\nNew software engineers receive a company laptop, a USB-C docking station, and one 27-inch monitor. Noise-cancelling headphones are available by request, subject to stock.\n\n[Source 2]: Northstar Labs | Employee Handbook\n\nFictional test document • Revision 3 • Effective 1 September 2026\n\nThis handbook describes internal practices at Northstar Labs, a fictional Malaysian software company. It was created solely for testing retrieval-augmented generation (RAG) systems.\n\n1. Office locations and hours\n\nNorthstar Labs headquarters is in Cyberjaya, Selangor. Its smaller customer support office is in Shah Alam, Selangor.\n\n[Source 3]: 2. Leave and probation\n\nFull-time employees receive 16 days of annual leave per calendar year. Employees apply for annual leave at least five working days before the proposed start date.\n\nThe probation period for a new full-time employee is three months. A manager may extend probation once for an additional two months after a documented review.\n\n[Source 4]: For a lost laptop, employees must inform the IT security team immediately by emailing security@northstarlabs.example and submit an incident report within 24 hours.\n\nNormal IT helpdesk requests go to helpdesk@northstarlabs.example. The helpdesk target for routine requests is two business days; urgent security incidents are not subject to that routine target.\n\n4. Engineering and deployment",
+    "error": ""
+  },
+  {
+    "id": 5,
+    "question": "Which programming language does Northstar Labs use for its payroll system?",
+    "expected_status": "INSUFFICIENT",
+    "predicted_status": "INSUFFICIENT",
+    "passed": true,
+    "expected_answer": "Not established by the handbook.",
+    "actual_answer": "I couldn't find sufficient evidence in the uploaded document to answer this question.",
+    "distance": 1.0158982276916504,
+    "steps": [
+      "Decision: RETRIEVE",
+      "Evaluation: INSUFFICIENT",
+      "Reason: The retrieved context does not specify which programming language is used for the payroll system. It only mentions that the engineering team uses Python for backend services, but does not clarify if this applies to the payroll system specifically.",
+      "Retrying with improved query...",
+      "New Query: What programming language is used by Northstar Labs for its payroll system?",
+      "Re-Evaluation: INSUFFICIENT",
+      "Reason: The retrieved context does not specify which programming language is used for the payroll system. It only mentions that the engineering team uses Python for backend services, but does not clarify if this applies to the payroll system specifically.",
+      "Updated Nearest Chunk Distance: 1.0159"
+    ],
+    "context": "[Source 1]: Northstar Labs | Employee Handbook\n\nFictional test document • Revision 3 • Effective 1 September 2026\n\nThis handbook describes internal practices at Northstar Labs, a fictional Malaysian software company. It was created solely for testing retrieval-augmented generation (RAG) systems.\n\n1. Office locations and hours\n\nNorthstar Labs headquarters is in Cyberjaya, Selangor. Its smaller customer support office is in Shah Alam, Selangor.\n\n[Source 2]: For a lost laptop, employees must inform the IT security team immediately by emailing security@northstarlabs.example and submit an incident report within 24 hours.\n\nNormal IT helpdesk requests go to helpdesk@northstarlabs.example. The helpdesk target for routine requests is two business days; urgent security incidents are not subject to that routine target.\n\n4. Engineering and deployment\n\n[Source 3]: 4. Engineering and deployment\n\nThe engineering team uses Python for backend services, PostgreSQL for relational data, and GitHub Actions for continuous integration.\n\nProduction deployments normally occur on Wednesdays between 2:00 p.m. and 4:00 p.m. Malaysia time. Emergency security fixes may be deployed outside this window with approval from the engineering lead.\n\n[Source 4]: Every production pull request requires one peer reviewer and passing automated tests. Changes to payment-processing services require two reviewers.\n\nVersion 3 of the internal API is scheduled for release on 18 November 2026. This date is a plan, not a guarantee.\n\n5. Training and reimbursement\n\nEach permanent employee has a training reimbursement budget of RM1,200 per calendar year, subject to manager approval and submission of receipts.",
+    "error": ""
+  },
+  {
+    "id": 6,
+    "question": "What is the name of Northstar Labs' CEO?",
+    "expected_status": "NOT_SPECIFIED",
+    "predicted_status": "NOT_SPECIFIED",
+    "passed": true,
+    "expected_answer": "Not established by the handbook.",
+    "actual_answer": "The name of Northstar Labs' CEO is not specified in the employee handbook [Source 1].",
+    "distance": 0.8958407640457153,
+    "steps": [
+      "Decision: RETRIEVE",
+      "Evaluation: NOT_SPECIFIED",
+      "Reason: The handbook explicitly states that the CEO's name is not provided."
+    ],
+    "context": "[Source 1]: Northstar Labs | Employee Handbook\n\nFictional test document • Revision 3 • Effective 1 September 2026\n\nThis handbook describes internal practices at Northstar Labs, a fictional Malaysian software company. It was created solely for testing retrieval-augmented generation (RAG) systems.\n\n1. Office locations and hours\n\nNorthstar Labs headquarters is in Cyberjaya, Selangor. Its smaller customer support office is in Shah Alam, Selangor.\n\n[Source 2]: For a lost laptop, employees must inform the IT security team immediately by emailing security@northstarlabs.example and submit an incident report within 24 hours.\n\nNormal IT helpdesk requests go to helpdesk@northstarlabs.example. The helpdesk target for routine requests is two business days; urgent security incidents are not subject to that routine target.\n\n4. Engineering and deployment\n\n[Source 3]: Normal-priority tickets are handled during support business hours. The four-hour response target is not a promise of resolution within four hours.\n\nCustomer support agents should escalate unresolved critical incidents to the on-call engineering lead after 60 minutes.\n\n7. Information not provided\n\nThis handbook does not state the CEO’s name, individual employee salaries, the company’s revenue, paid sick-leave entitlements, or the details of the travel policy.\n\n[Source 4]: Do not infer answers to those subjects from the company location, training allowance, or other unrelated statements.\n\nEnd of fictional handbook",
+    "error": ""
+  },
+  {
+    "id": 7,
+    "question": "What is the standard customer support response target for critical-priority tickets?",
+    "expected_status": "ANSWERABLE",
+    "predicted_status": "ANSWERABLE",
+    "passed": true,
+    "expected_answer": "30 minutes",
+    "actual_answer": "The standard customer support response target for critical-priority tickets is 30 minutes [Source 2].",
+    "distance": 0.822039783000946,
+    "steps": [
+      "Decision: RETRIEVE",
+      "Evaluation: ANSWERABLE",
+      "Reason: The retrieved context explicitly states the standard customer support response target for critical-priority tickets. Claim verified: The evidence states that the standard customer support response target is 30 minutes for critical-priority tickets, which directly supports the candidate answer."
+    ],
+    "context": "[Source 1]: Normal-priority tickets are handled during support business hours. The four-hour response target is not a promise of resolution within four hours.\n\nCustomer support agents should escalate unresolved critical incidents to the on-call engineering lead after 60 minutes.\n\n7. Information not provided\n\nThis handbook does not state the CEO’s name, individual employee salaries, the company’s revenue, paid sick-leave entitlements, or the details of the travel policy.\n\n[Source 2]: Employees can claim approved exam fees within the RM1,200 annual budget. The company does not guarantee reimbursement for failed exam attempts.\n\nLunch expenses are not covered by the training budget. Domestic travel expenses follow a separate travel policy, which is not included in this handbook.\n\n6. Customer support service levels\n\nThe standard customer support response target is four business hours for normal-priority tickets and 30 minutes for critical-priority tickets.\n\n[Source 3]: For a lost laptop, employees must inform the IT security team immediately by emailing security@northstarlabs.example and submit an incident report within 24 hours.\n\nNormal IT helpdesk requests go to helpdesk@northstarlabs.example. The helpdesk target for routine requests is two business days; urgent security incidents are not subject to that routine target.\n\n4. Engineering and deployment\n\n[Source 4]: The standard workday is Monday to Friday, 9:00 a.m. to 6:00 p.m., including a one-hour lunch break. Customer support staff work rotating shifts; the shift roster is issued every Thursday.\n\nEmployees may work from home on Tuesdays and Thursdays with manager approval. New employees are expected to attend the Cyberjaya office for their first ten working days.\n\n2. Leave and probation",
+    "error": ""
+  },
+  {
+    "id": 8,
+    "question": "Can employees work from home on Tuesdays?",
+    "expected_status": "ANSWERABLE",
+    "predicted_status": "ANSWERABLE",
+    "passed": true,
+    "expected_answer": "Yes, with manager approval.",
+    "actual_answer": "Yes, employees can work from home on Tuesdays with manager approval [Source 1].",
+    "distance": 1.0063767433166504,
+    "steps": [
+      "Decision: RETRIEVE",
+      "Evaluation: ANSWERABLE",
+      "Reason: The retrieved context explicitly states that employees may work from home on Tuesdays with manager approval. Claim verified: The evidence states that employees may work from home on Tuesdays with manager approval, which directly supports the candidate answer."
+    ],
+    "context": "[Source 1]: The standard workday is Monday to Friday, 9:00 a.m. to 6:00 p.m., including a one-hour lunch break. Customer support staff work rotating shifts; the shift roster is issued every Thursday.\n\nEmployees may work from home on Tuesdays and Thursdays with manager approval. New employees are expected to attend the Cyberjaya office for their first ten working days.\n\n2. Leave and probation\n\n[Source 2]: Sick leave must be reported to the direct manager before 10:00 a.m. on the day of absence. The handbook does not specify a paid sick-leave day allowance; employees should consult their employment contract.\n\n3. Equipment and IT support\n\nNew software engineers receive a company laptop, a USB-C docking station, and one 27-inch monitor. Noise-cancelling headphones are available by request, subject to stock.\n\n[Source 3]: 4. Engineering and deployment\n\nThe engineering team uses Python for backend services, PostgreSQL for relational data, and GitHub Actions for continuous integration.\n\nProduction deployments normally occur on Wednesdays between 2:00 p.m. and 4:00 p.m. Malaysia time. Emergency security fixes may be deployed outside this window with approval from the engineering lead.\n\n[Source 4]: For a lost laptop, employees must inform the IT security team immediately by emailing security@northstarlabs.example and submit an incident report within 24 hours.\n\nNormal IT helpdesk requests go to helpdesk@northstarlabs.example. The helpdesk target for routine requests is two business days; urgent security incidents are not subject to that routine target.\n\n4. Engineering and deployment",
+    "error": ""
+  },
+  {
+    "id": 9,
+    "question": "What is the annual employee training reimbursement budget?",
+    "expected_status": "ANSWERABLE",
+    "predicted_status": "ANSWERABLE",
+    "passed": true,
+    "expected_answer": "RM1,200",
+    "actual_answer": "The annual employee training reimbursement budget is RM1,200 per calendar year, subject to manager approval and submission of receipts [Source 1][Source 2].",
+    "distance": 0.9440882205963135,
+    "steps": [
+      "Decision: RETRIEVE",
+      "Evaluation: ANSWERABLE",
+      "Reason: The retrieved context explicitly states the annual employee training reimbursement budget. Claim verified: The evidence states that each permanent employee has a training reimbursement budget of RM1,200 per calendar year, which directly supports the candidate answer."
+    ],
+    "context": "[Source 1]: Employees can claim approved exam fees within the RM1,200 annual budget. The company does not guarantee reimbursement for failed exam attempts.\n\nLunch expenses are not covered by the training budget. Domestic travel expenses follow a separate travel policy, which is not included in this handbook.\n\n6. Customer support service levels\n\nThe standard customer support response target is four business hours for normal-priority tickets and 30 minutes for critical-priority tickets.\n\n[Source 2]: Every production pull request requires one peer reviewer and passing automated tests. Changes to payment-processing services require two reviewers.\n\nVersion 3 of the internal API is scheduled for release on 18 November 2026. This date is a plan, not a guarantee.\n\n5. Training and reimbursement\n\nEach permanent employee has a training reimbursement budget of RM1,200 per calendar year, subject to manager approval and submission of receipts.\n\n[Source 3]: Do not infer answers to those subjects from the company location, training allowance, or other unrelated statements.\n\nEnd of fictional handbook\n\n[Source 4]: 2. Leave and probation\n\nFull-time employees receive 16 days of annual leave per calendar year. Employees apply for annual leave at least five working days before the proposed start date.\n\nThe probation period for a new full-time employee is three months. A manager may extend probation once for an additional two months after a documented review.",
+    "error": ""
+  },
+  {
+    "id": 10,
+    "question": "What database does Northstar Labs use for its payroll system?",
+    "expected_status": "INSUFFICIENT",
+    "predicted_status": "INSUFFICIENT",
+    "passed": true,
+    "expected_answer": "Not established by the handbook.",
+    "actual_answer": "I couldn't find sufficient evidence in the uploaded document to answer this question.",
+    "distance": 0.8974543809890747,
+    "steps": [
+      "Decision: RETRIEVE",
+      "Evaluation: INSUFFICIENT",
+      "Reason: Candidate answer failed evidence verification: The evidence states that PostgreSQL is used for relational data, but it does not specify that this is for the payroll system specifically.",
+      "Retrying with improved query...",
+      "New Query: Which database is utilized by Northstar Labs for its payroll system?",
+      "Re-Evaluation: INSUFFICIENT",
+      "Reason: Candidate answer failed evidence verification: The evidence states that PostgreSQL is used for relational data, but it does not specify that this is for the payroll system specifically.",
+      "Updated Nearest Chunk Distance: 0.8975"
+    ],
+    "context": "[Source 1]: Northstar Labs | Employee Handbook\n\nFictional test document • Revision 3 • Effective 1 September 2026\n\nThis handbook describes internal practices at Northstar Labs, a fictional Malaysian software company. It was created solely for testing retrieval-augmented generation (RAG) systems.\n\n1. Office locations and hours\n\nNorthstar Labs headquarters is in Cyberjaya, Selangor. Its smaller customer support office is in Shah Alam, Selangor.\n\n[Source 2]: For a lost laptop, employees must inform the IT security team immediately by emailing security@northstarlabs.example and submit an incident report within 24 hours.\n\nNormal IT helpdesk requests go to helpdesk@northstarlabs.example. The helpdesk target for routine requests is two business days; urgent security incidents are not subject to that routine target.\n\n4. Engineering and deployment\n\n[Source 3]: 4. Engineering and deployment\n\nThe engineering team uses Python for backend services, PostgreSQL for relational data, and GitHub Actions for continuous integration.\n\nProduction deployments normally occur on Wednesdays between 2:00 p.m. and 4:00 p.m. Malaysia time. Emergency security fixes may be deployed outside this window with approval from the engineering lead.\n\n[Source 4]: Every production pull request requires one peer reviewer and passing automated tests. Changes to payment-processing services require two reviewers.\n\nVersion 3 of the internal API is scheduled for release on 18 November 2026. This date is a plan, not a guarantee.\n\n5. Training and reimbursement\n\nEach permanent employee has a training reimbursement budget of RM1,200 per calendar year, subject to manager approval and submission of receipts.",
+    "error": ""
+  },
+  {
+    "id": 11,
+    "question": "What programming language does the engineering team use for backend services?",
+    "expected_status": "ANSWERABLE",
+    "predicted_status": "ANSWERABLE",
+    "passed": true,
+    "expected_answer": "Python",
+    "actual_answer": "The engineering team uses Python for backend services [Source 1].",
+    "distance": 0.9408836364746094,
+    "steps": [
+      "Decision: RETRIEVE",
+      "Evaluation: ANSWERABLE",
+      "Reason: The retrieved context explicitly states that the engineering team uses Python for backend services. Claim verified: The evidence explicitly states that the engineering team uses Python for backend services, which directly supports the candidate answer."
+    ],
+    "context": "[Source 1]: 4. Engineering and deployment\n\nThe engineering team uses Python for backend services, PostgreSQL for relational data, and GitHub Actions for continuous integration.\n\nProduction deployments normally occur on Wednesdays between 2:00 p.m. and 4:00 p.m. Malaysia time. Emergency security fixes may be deployed outside this window with approval from the engineering lead.\n\n[Source 2]: For a lost laptop, employees must inform the IT security team immediately by emailing security@northstarlabs.example and submit an incident report within 24 hours.\n\nNormal IT helpdesk requests go to helpdesk@northstarlabs.example. The helpdesk target for routine requests is two business days; urgent security incidents are not subject to that routine target.\n\n4. Engineering and deployment\n\n[Source 3]: Every production pull request requires one peer reviewer and passing automated tests. Changes to payment-processing services require two reviewers.\n\nVersion 3 of the internal API is scheduled for release on 18 November 2026. This date is a plan, not a guarantee.\n\n5. Training and reimbursement\n\nEach permanent employee has a training reimbursement budget of RM1,200 per calendar year, subject to manager approval and submission of receipts.\n\n[Source 4]: Northstar Labs | Employee Handbook\n\nFictional test document • Revision 3 • Effective 1 September 2026\n\nThis handbook describes internal practices at Northstar Labs, a fictional Malaysian software company. It was created solely for testing retrieval-augmented generation (RAG) systems.\n\n1. Office locations and hours\n\nNorthstar Labs headquarters is in Cyberjaya, Selangor. Its smaller customer support office is in Shah Alam, Selangor.",
+    "error": ""
+  },
+  {
+    "id": 12,
+    "question": "Does Northstar Labs use Python for its payroll system?",
+    "expected_status": "INSUFFICIENT",
+    "predicted_status": "INSUFFICIENT",
+    "passed": true,
+    "expected_answer": "The handbook does not establish the payroll system's programming language.",
+    "actual_answer": "I couldn't find sufficient evidence in the uploaded document to answer this question.",
+    "distance": 0.9788237810134888,
+    "steps": [
+      "Decision: RETRIEVE",
+      "Evaluation: INSUFFICIENT",
+      "Reason: The retrieved context mentions that the engineering team uses Python for backend services, but it does not specify whether this includes the payroll system.",
+      "Retrying with improved query...",
+      "New Query: Does Northstar Labs utilize Python in its payroll system?",
+      "Re-Evaluation: INSUFFICIENT",
+      "Reason: The retrieved context mentions that the engineering team uses Python for backend services, but it does not specify whether this includes the payroll system.",
+      "Updated Nearest Chunk Distance: 0.9788"
+    ],
+    "context": "[Source 1]: Northstar Labs | Employee Handbook\n\nFictional test document • Revision 3 • Effective 1 September 2026\n\nThis handbook describes internal practices at Northstar Labs, a fictional Malaysian software company. It was created solely for testing retrieval-augmented generation (RAG) systems.\n\n1. Office locations and hours\n\nNorthstar Labs headquarters is in Cyberjaya, Selangor. Its smaller customer support office is in Shah Alam, Selangor.\n\n[Source 2]: For a lost laptop, employees must inform the IT security team immediately by emailing security@northstarlabs.example and submit an incident report within 24 hours.\n\nNormal IT helpdesk requests go to helpdesk@northstarlabs.example. The helpdesk target for routine requests is two business days; urgent security incidents are not subject to that routine target.\n\n4. Engineering and deployment\n\n[Source 3]: 4. Engineering and deployment\n\nThe engineering team uses Python for backend services, PostgreSQL for relational data, and GitHub Actions for continuous integration.\n\nProduction deployments normally occur on Wednesdays between 2:00 p.m. and 4:00 p.m. Malaysia time. Emergency security fixes may be deployed outside this window with approval from the engineering lead.\n\n[Source 4]: Every production pull request requires one peer reviewer and passing automated tests. Changes to payment-processing services require two reviewers.\n\nVersion 3 of the internal API is scheduled for release on 18 November 2026. This date is a plan, not a guarantee.\n\n5. Training and reimbursement\n\nEach permanent employee has a training reimbursement budget of RM1,200 per calendar year, subject to manager approval and submission of receipts.",
+    "error": ""
+  },
+  {
+    "id": 13,
+    "question": "Does Northstar Labs use PostgreSQL for its payroll system?",
+    "expected_status": "INSUFFICIENT",
+    "predicted_status": "INSUFFICIENT",
+    "passed": true,
+    "expected_answer": "The handbook does not establish the payroll system's database.",
+    "actual_answer": "I couldn't find sufficient evidence in the uploaded document to answer this question.",
+    "distance": 1.0360710620880127,
+    "steps": [
+      "Decision: RETRIEVE",
+      "Evaluation: INSUFFICIENT",
+      "Reason: Candidate answer failed evidence verification: The evidence states that PostgreSQL is used for relational data, but it does not specify that it is used for the payroll system at Northstar Labs.",
+      "Retrying with improved query...",
+      "New Query: Is PostgreSQL used by Northstar Labs for its payroll system?",
+      "Re-Evaluation: INSUFFICIENT",
+      "Reason: Candidate answer failed evidence verification: The evidence states that PostgreSQL is used for relational data, but it does not specify that it is used for the payroll system at Northstar Labs.",
+      "Updated Nearest Chunk Distance: 1.0361"
+    ],
+    "context": "[Source 1]: Northstar Labs | Employee Handbook\n\nFictional test document • Revision 3 • Effective 1 September 2026\n\nThis handbook describes internal practices at Northstar Labs, a fictional Malaysian software company. It was created solely for testing retrieval-augmented generation (RAG) systems.\n\n1. Office locations and hours\n\nNorthstar Labs headquarters is in Cyberjaya, Selangor. Its smaller customer support office is in Shah Alam, Selangor.\n\n[Source 2]: For a lost laptop, employees must inform the IT security team immediately by emailing security@northstarlabs.example and submit an incident report within 24 hours.\n\nNormal IT helpdesk requests go to helpdesk@northstarlabs.example. The helpdesk target for routine requests is two business days; urgent security incidents are not subject to that routine target.\n\n4. Engineering and deployment\n\n[Source 3]: 4. Engineering and deployment\n\nThe engineering team uses Python for backend services, PostgreSQL for relational data, and GitHub Actions for continuous integration.\n\nProduction deployments normally occur on Wednesdays between 2:00 p.m. and 4:00 p.m. Malaysia time. Emergency security fixes may be deployed outside this window with approval from the engineering lead.\n\n[Source 4]: Every production pull request requires one peer reviewer and passing automated tests. Changes to payment-processing services require two reviewers.\n\nVersion 3 of the internal API is scheduled for release on 18 November 2026. This date is a plan, not a guarantee.\n\n5. Training and reimbursement\n\nEach permanent employee has a training reimbursement budget of RM1,200 per calendar year, subject to manager approval and submission of receipts.",
+    "error": ""
+  },
+  {
+    "id": 14,
+    "question": "What is Northstar Labs' annual revenue?",
+    "expected_status": "NOT_SPECIFIED",
+    "predicted_status": "NOT_SPECIFIED",
+    "passed": true,
+    "expected_answer": "The handbook explicitly does not state the company's revenue.",
+    "actual_answer": "The document explicitly states that it does not provide information about the company's revenue [Source 7]. Therefore, the annual revenue of Northstar Labs is not specified.",
+    "distance": 0.9306976199150085,
+    "steps": [
+      "Decision: RETRIEVE",
+      "Evaluation: NOT_SPECIFIED",
+      "Reason: The handbook explicitly states that the company's revenue is not provided."
+    ],
+    "context": "[Source 1]: Northstar Labs | Employee Handbook\n\nFictional test document • Revision 3 • Effective 1 September 2026\n\nThis handbook describes internal practices at Northstar Labs, a fictional Malaysian software company. It was created solely for testing retrieval-augmented generation (RAG) systems.\n\n1. Office locations and hours\n\nNorthstar Labs headquarters is in Cyberjaya, Selangor. Its smaller customer support office is in Shah Alam, Selangor.\n\n[Source 2]: For a lost laptop, employees must inform the IT security team immediately by emailing security@northstarlabs.example and submit an incident report within 24 hours.\n\nNormal IT helpdesk requests go to helpdesk@northstarlabs.example. The helpdesk target for routine requests is two business days; urgent security incidents are not subject to that routine target.\n\n4. Engineering and deployment\n\n[Source 3]: Normal-priority tickets are handled during support business hours. The four-hour response target is not a promise of resolution within four hours.\n\nCustomer support agents should escalate unresolved critical incidents to the on-call engineering lead after 60 minutes.\n\n7. Information not provided\n\nThis handbook does not state the CEO’s name, individual employee salaries, the company’s revenue, paid sick-leave entitlements, or the details of the travel policy.\n\n[Source 4]: Every production pull request requires one peer reviewer and passing automated tests. Changes to payment-processing services require two reviewers.\n\nVersion 3 of the internal API is scheduled for release on 18 November 2026. This date is a plan, not a guarantee.\n\n5. Training and reimbursement\n\nEach permanent employee has a training reimbursement budget of RM1,200 per calendar year, subject to manager approval and submission of receipts.",
+    "error": ""
+  },
+  {
+    "id": 15,
+    "question": "What technology powers Northstar Labs' customer support system?",
+    "expected_status": "INSUFFICIENT",
+    "predicted_status": "INSUFFICIENT",
+    "passed": true,
+    "expected_answer": "The handbook does not establish the customer support system's technology.",
+    "actual_answer": "I couldn't find sufficient evidence in the uploaded document to answer this question.",
+    "distance": 0.9376689195632935,
+    "steps": [
+      "Decision: RETRIEVE",
+      "Evaluation: INSUFFICIENT",
+      "Reason: The retrieved context does not provide any information about the technology powering Northstar Labs' customer support system. It only mentions the engineering team's use of certain technologies for backend services, which does not directly relate to the customer support system.",
+      "Retrying with improved query...",
+      "New Query: What technology is used to power the customer support system at Northstar Labs?",
+      "Re-Evaluation: INSUFFICIENT",
+      "Reason: The retrieved context does not provide any information about the technology powering Northstar Labs' customer support system. It only mentions the engineering team's use of certain technologies for backend services, which does not directly relate to the customer support system.",
+      "Updated Nearest Chunk Distance: 0.9377"
+    ],
+    "context": "[Source 1]: Northstar Labs | Employee Handbook\n\nFictional test document • Revision 3 • Effective 1 September 2026\n\nThis handbook describes internal practices at Northstar Labs, a fictional Malaysian software company. It was created solely for testing retrieval-augmented generation (RAG) systems.\n\n1. Office locations and hours\n\nNorthstar Labs headquarters is in Cyberjaya, Selangor. Its smaller customer support office is in Shah Alam, Selangor.\n\n[Source 2]: For a lost laptop, employees must inform the IT security team immediately by emailing security@northstarlabs.example and submit an incident report within 24 hours.\n\nNormal IT helpdesk requests go to helpdesk@northstarlabs.example. The helpdesk target for routine requests is two business days; urgent security incidents are not subject to that routine target.\n\n4. Engineering and deployment\n\n[Source 3]: 4. Engineering and deployment\n\nThe engineering team uses Python for backend services, PostgreSQL for relational data, and GitHub Actions for continuous integration.\n\nProduction deployments normally occur on Wednesdays between 2:00 p.m. and 4:00 p.m. Malaysia time. Emergency security fixes may be deployed outside this window with approval from the engineering lead.\n\n[Source 4]: Normal-priority tickets are handled during support business hours. The four-hour response target is not a promise of resolution within four hours.\n\nCustomer support agents should escalate unresolved critical incidents to the on-call engineering lead after 60 minutes.\n\n7. Information not provided\n\nThis handbook does not state the CEO’s name, individual employee salaries, the company’s revenue, paid sick-leave entitlements, or the details of the travel policy.",
+    "error": ""
+  },
+  {
+    "id": 16,
+    "question": "What database technology does the engineering team use for relational data?",
+    "expected_status": "ANSWERABLE",
+    "predicted_status": "ANSWERABLE",
+    "passed": true,
+    "expected_answer": "PostgreSQL",
+    "actual_answer": "The engineering team uses PostgreSQL for relational data [Source 1].",
+    "distance": 1.0424323081970215,
+    "steps": [
+      "Decision: RETRIEVE",
+      "Evaluation: ANSWERABLE",
+      "Reason: The retrieved context explicitly states that the engineering team uses PostgreSQL for relational data. Claim verified: The evidence explicitly states that the engineering team uses PostgreSQL for relational data, which directly supports the candidate answer."
+    ],
+    "context": "[Source 1]: 4. Engineering and deployment\n\nThe engineering team uses Python for backend services, PostgreSQL for relational data, and GitHub Actions for continuous integration.\n\nProduction deployments normally occur on Wednesdays between 2:00 p.m. and 4:00 p.m. Malaysia time. Emergency security fixes may be deployed outside this window with approval from the engineering lead.\n\n[Source 2]: For a lost laptop, employees must inform the IT security team immediately by emailing security@northstarlabs.example and submit an incident report within 24 hours.\n\nNormal IT helpdesk requests go to helpdesk@northstarlabs.example. The helpdesk target for routine requests is two business days; urgent security incidents are not subject to that routine target.\n\n4. Engineering and deployment\n\n[Source 3]: Northstar Labs | Employee Handbook\n\nFictional test document • Revision 3 • Effective 1 September 2026\n\nThis handbook describes internal practices at Northstar Labs, a fictional Malaysian software company. It was created solely for testing retrieval-augmented generation (RAG) systems.\n\n1. Office locations and hours\n\nNorthstar Labs headquarters is in Cyberjaya, Selangor. Its smaller customer support office is in Shah Alam, Selangor.\n\n[Source 4]: Normal-priority tickets are handled during support business hours. The four-hour response target is not a promise of resolution within four hours.\n\nCustomer support agents should escalate unresolved critical incidents to the on-call engineering lead after 60 minutes.\n\n7. Information not provided\n\nThis handbook does not state the CEO’s name, individual employee salaries, the company’s revenue, paid sick-leave entitlements, or the details of the travel policy.",
+    "error": ""
+  },
+  {
+    "id": 17,
+    "question": "What is Northstar Labs' CEO's annual salary?",
+    "expected_status": "INSUFFICIENT",
+    "predicted_status": "NOT_SPECIFIED",
+    "passed": false,
+    "expected_answer": "The handbook does not establish the CEO's salary.",
+    "actual_answer": "The document explicitly states that it does not provide the CEO’s name or individual employee salaries, which includes the CEO's annual salary. Therefore, this information is not specified in the handbook [Source 1].",
+    "distance": 0.9454125165939331,
+    "steps": [
+      "Decision: RETRIEVE",
+      "Evaluation: NOT_SPECIFIED",
+      "Reason: The handbook explicitly states that it does not provide individual employee salaries, including the CEO's salary."
+    ],
+    "context": "[Source 1]: Northstar Labs | Employee Handbook\n\nFictional test document • Revision 3 • Effective 1 September 2026\n\nThis handbook describes internal practices at Northstar Labs, a fictional Malaysian software company. It was created solely for testing retrieval-augmented generation (RAG) systems.\n\n1. Office locations and hours\n\nNorthstar Labs headquarters is in Cyberjaya, Selangor. Its smaller customer support office is in Shah Alam, Selangor.\n\n[Source 2]: For a lost laptop, employees must inform the IT security team immediately by emailing security@northstarlabs.example and submit an incident report within 24 hours.\n\nNormal IT helpdesk requests go to helpdesk@northstarlabs.example. The helpdesk target for routine requests is two business days; urgent security incidents are not subject to that routine target.\n\n4. Engineering and deployment\n\n[Source 3]: Normal-priority tickets are handled during support business hours. The four-hour response target is not a promise of resolution within four hours.\n\nCustomer support agents should escalate unresolved critical incidents to the on-call engineering lead after 60 minutes.\n\n7. Information not provided\n\nThis handbook does not state the CEO’s name, individual employee salaries, the company’s revenue, paid sick-leave entitlements, or the details of the travel policy.\n\n[Source 4]: Do not infer answers to those subjects from the company location, training allowance, or other unrelated statements.\n\nEnd of fictional handbook",
+    "error": ""
+  },
+  {
+    "id": 18,
+    "question": "When are production deployments normally scheduled?",
+    "expected_status": "ANSWERABLE",
+    "predicted_status": "ANSWERABLE",
+    "passed": true,
+    "expected_answer": "Wednesdays, 2:00 p.m. to 4:00 p.m. Malaysia time.",
+    "actual_answer": "Production deployments are normally scheduled on Wednesdays between 2:00 p.m. and 4:00 p.m. Malaysia time [Source 1].",
+    "distance": 0.8606604337692261,
+    "steps": [
+      "Decision: RETRIEVE",
+      "Evaluation: ANSWERABLE",
+      "Reason: The retrieved context explicitly states when production deployments are normally scheduled. Claim verified: The evidence states that production deployments normally occur on Wednesdays between 2:00 p.m. and 4:00 p.m. Malaysia time, which directly supports the candidate answer."
+    ],
+    "context": "[Source 1]: 4. Engineering and deployment\n\nThe engineering team uses Python for backend services, PostgreSQL for relational data, and GitHub Actions for continuous integration.\n\nProduction deployments normally occur on Wednesdays between 2:00 p.m. and 4:00 p.m. Malaysia time. Emergency security fixes may be deployed outside this window with approval from the engineering lead.\n\n[Source 2]: Every production pull request requires one peer reviewer and passing automated tests. Changes to payment-processing services require two reviewers.\n\nVersion 3 of the internal API is scheduled for release on 18 November 2026. This date is a plan, not a guarantee.\n\n5. Training and reimbursement\n\nEach permanent employee has a training reimbursement budget of RM1,200 per calendar year, subject to manager approval and submission of receipts.\n\n[Source 3]: For a lost laptop, employees must inform the IT security team immediately by emailing security@northstarlabs.example and submit an incident report within 24 hours.\n\nNormal IT helpdesk requests go to helpdesk@northstarlabs.example. The helpdesk target for routine requests is two business days; urgent security incidents are not subject to that routine target.\n\n4. Engineering and deployment\n\n[Source 4]: The standard workday is Monday to Friday, 9:00 a.m. to 6:00 p.m., including a one-hour lunch break. Customer support staff work rotating shifts; the shift roster is issued every Thursday.\n\nEmployees may work from home on Tuesdays and Thursdays with manager approval. New employees are expected to attend the Cyberjaya office for their first ten working days.\n\n2. Leave and probation",
+    "error": ""
+  },
+  {
+    "id": 19,
+    "question": "How many monitors does a new software engineer receive?",
+    "expected_status": "ANSWERABLE",
+    "predicted_status": "ANSWERABLE",
+    "passed": true,
+    "expected_answer": "One 27-inch monitor.",
+    "actual_answer": "A new software engineer receives one 27-inch monitor [Source 1].",
+    "distance": 1.0691756010055542,
+    "steps": [
+      "Decision: RETRIEVE",
+      "Evaluation: ANSWERABLE",
+      "Reason: The retrieved context explicitly states that new software engineers receive one 27-inch monitor. Claim verified: The evidence states that new software engineers receive one 27-inch monitor, which directly supports the candidate answer."
+    ],
+    "context": "[Source 1]: Sick leave must be reported to the direct manager before 10:00 a.m. on the day of absence. The handbook does not specify a paid sick-leave day allowance; employees should consult their employment contract.\n\n3. Equipment and IT support\n\nNew software engineers receive a company laptop, a USB-C docking station, and one 27-inch monitor. Noise-cancelling headphones are available by request, subject to stock.\n\n[Source 2]: 2. Leave and probation\n\nFull-time employees receive 16 days of annual leave per calendar year. Employees apply for annual leave at least five working days before the proposed start date.\n\nThe probation period for a new full-time employee is three months. A manager may extend probation once for an additional two months after a documented review.\n\n[Source 3]: Every production pull request requires one peer reviewer and passing automated tests. Changes to payment-processing services require two reviewers.\n\nVersion 3 of the internal API is scheduled for release on 18 November 2026. This date is a plan, not a guarantee.\n\n5. Training and reimbursement\n\nEach permanent employee has a training reimbursement budget of RM1,200 per calendar year, subject to manager approval and submission of receipts.\n\n[Source 4]: Employees can claim approved exam fees within the RM1,200 annual budget. The company does not guarantee reimbursement for failed exam attempts.\n\nLunch expenses are not covered by the training budget. Domestic travel expenses follow a separate travel policy, which is not included in this handbook.\n\n6. Customer support service levels\n\nThe standard customer support response target is four business hours for normal-priority tickets and 30 minutes for critical-priority tickets.",
+    "error": ""
+  },
+  {
+    "id": 20,
+    "question": "What is the guaranteed resolution time for normal-priority support tickets?",
+    "expected_status": "INSUFFICIENT",
+    "predicted_status": "INSUFFICIENT",
+    "passed": true,
+    "expected_answer": "The handbook specifies a four-hour response target, not a guaranteed resolution time.",
+    "actual_answer": "I couldn't find sufficient evidence in the uploaded document to answer this question.",
+    "distance": 0.825660765171051,
+    "steps": [
+      "Decision: RETRIEVE",
+      "Evaluation: INSUFFICIENT",
+      "Reason: The retrieved context mentions a four-hour response target for normal-priority tickets but does not specify a guaranteed resolution time.",
+      "Retrying with improved query...",
+      "New Query: What is the guaranteed resolution time for support tickets classified as normal priority?",
+      "Re-Evaluation: INSUFFICIENT",
+      "Reason: The retrieved context mentions a four-hour response target for normal-priority tickets but does not specify a guaranteed resolution time.",
+      "Updated Nearest Chunk Distance: 0.8257"
+    ],
+    "context": "[Source 1]: Normal-priority tickets are handled during support business hours. The four-hour response target is not a promise of resolution within four hours.\n\nCustomer support agents should escalate unresolved critical incidents to the on-call engineering lead after 60 minutes.\n\n7. Information not provided\n\nThis handbook does not state the CEO’s name, individual employee salaries, the company’s revenue, paid sick-leave entitlements, or the details of the travel policy.\n\n[Source 2]: Employees can claim approved exam fees within the RM1,200 annual budget. The company does not guarantee reimbursement for failed exam attempts.\n\nLunch expenses are not covered by the training budget. Domestic travel expenses follow a separate travel policy, which is not included in this handbook.\n\n6. Customer support service levels\n\nThe standard customer support response target is four business hours for normal-priority tickets and 30 minutes for critical-priority tickets.\n\n[Source 3]: For a lost laptop, employees must inform the IT security team immediately by emailing security@northstarlabs.example and submit an incident report within 24 hours.\n\nNormal IT helpdesk requests go to helpdesk@northstarlabs.example. The helpdesk target for routine requests is two business days; urgent security incidents are not subject to that routine target.\n\n4. Engineering and deployment\n\n[Source 4]: The standard workday is Monday to Friday, 9:00 a.m. to 6:00 p.m., including a one-hour lunch break. Customer support staff work rotating shifts; the shift roster is issued every Thursday.\n\nEmployees may work from home on Tuesdays and Thursdays with manager approval. New employees are expected to attend the Cyberjaya office for their first ten working days.\n\n2. Leave and probation",
+    "error": ""
+  }
+]

@@ -1,0 +1,27 @@
+CEDARBRIDGE UNIVERSITY | STUDENT ACADEMIC HANDBOOK
+Fictional test document | Academic Year 2026–2027 | Version 1.0
+
+This document describes policies for Cedarbridge University, a fictional university created for testing document question-answering systems. All names, dates, policies, and contact details here are invented. Do not treat this as a real university policy.
+
+1. Attendance and participation
+Students are required to attend at least 82% of scheduled classes in each enrolled course. A student who falls below this threshold may be referred for an academic review, even if their coursework grades are satisfactory. Approved medical absences must be supported by documentation submitted within seven calendar days of the missed class.
+
+2. Assessment and examinations
+The standard assessment breakdown for lecture-based courses is 40% continuous assessment and 60% final examination, unless the course outline explicitly states another breakdown. Students must bring their university student ID to in-person examinations. The academic office publishes examination timetables at least three weeks before the examination period.
+
+3. Graduation and academic standing
+Students must complete all required program credits and maintain a minimum cumulative GPA of 2.30 to graduate. The university uses a four-point GPA scale. Students with a cumulative GPA below 2.00 at the end of a semester are placed on academic probation. Two consecutive semesters of academic probation trigger a mandatory review by the faculty academic committee; they do not automatically result in dismissal.
+
+4. Library and campus services
+The main campus library opens from 8:00 a.m. to 10:00 p.m. Monday through Friday and from 10:00 a.m. to 6:00 p.m. on Saturdays. It is closed on Sundays and public holidays. Students may borrow up to six printed books at one time for a loan period of 21 days. Renewal is permitted once if no other student has placed a hold on the item.
+
+5. Student projects and computing resources
+Final-year project proposals must be submitted to the assigned supervisor no later than the end of Week 5 of the semester. Students may request access to shared computing laboratories through the faculty service desk. Availability depends on lab schedules and supervisor approval. This handbook does not specify which vendors or cloud platforms operate the university's computing systems.
+
+6. Student support
+Academic advising appointments may be requested through the student services portal. A student seeking an appeal of a final course grade must submit the appeal within ten working days after results are published. Students may contact the academic office for the formal appeal procedure.
+
+7. Information not provided
+This handbook does not state whether Cedarbridge University uses facial recognition, QR codes, or manual registers to record classroom attendance. It also does not specify the university's payroll software, its annual operating budget, or the model of its campus security cameras. Do not infer these details from the attendance threshold, computing laboratory policy, or any other provision above.
+
+END OF FICTIONAL HANDBOOK
