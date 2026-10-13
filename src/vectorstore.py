@@ -39,9 +39,6 @@ def retrieve_context(vectorstore, query, k=TOP_K):
         for i, (doc, _) in enumerate(docs_and_scores)
     )
 
-    # FAISS returns a distance, not a confidence probability.
-    # With this index configuration, smaller distances indicate
-    # closer matches.
     best_distance = min(
         float(score)
         for _, score in docs_and_scores

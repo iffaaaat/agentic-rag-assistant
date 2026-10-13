@@ -78,7 +78,6 @@ def run_evaluation(document_path, test_path):
             if passed:
                 correct += 1
 
-            # Extract validation outcomes from the agent's steps.
             citation_status = "NOT_RUN"
             final_answer_status = "NOT_RUN"
 
@@ -101,7 +100,6 @@ def run_evaluation(document_path, test_path):
                 elif step == "Final Answer Verification: FAILED":
                     final_answer_status = "FAILED"
 
-            # Track abstentions caused by answer-validation failures.
             answer_abstained = (
                 "I couldn't produce an answer with valid source "
                 "citations" in answer

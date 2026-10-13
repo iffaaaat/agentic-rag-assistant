@@ -9,16 +9,12 @@ from src.llm_utils import ask_for_json
 def normalize_evidence(text):
     """Normalize text for approximate quotation matching."""
 
-    # Normalize different Unicode character forms.
     text = unicodedata.normalize("NFKC", text)
 
-    # Make capitalization consistent.
     text = text.casefold()
 
-    # Replace punctuation with spaces.
     text = re.sub(r"[^\w\s]", " ", text)
 
-    # Collapse repeated whitespace.
     text = " ".join(text.split())
 
     return text
@@ -344,7 +340,6 @@ def verify_final_answer(query, answer, context):
             "reason": "No cited evidence was available.",
         }
 
-    # Reuse our existing LLM claim verifier.
     return verify_claim(
         query=query,
         candidate_answer=answer,
